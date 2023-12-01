@@ -4,6 +4,9 @@ require:
 AllCops:
   NewCops: enable
 
+Metrics/MethodLength:
+  Enabled: false
+
 RSpec/FilePath:
   Enabled: false
 
