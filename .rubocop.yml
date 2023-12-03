@@ -4,8 +4,21 @@ require:
 AllCops:
   NewCops: enable
 
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
 Metrics/MethodLength:
   Enabled: false
+
+Naming/MethodParameterName:
+  AllowedNames:
+    - at
+    - id
+    - x
+    - y
 
 RSpec/FilePath:
   Enabled: false
@@ -13,7 +26,13 @@ RSpec/FilePath:
 Rubocop/DescribeClass:
   Enabled: false
 
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
 Style/Documentation:
+  Enabled: false
+
+Style/NegatedIf:
   Enabled: false
 
 Style/StringLiterals:
