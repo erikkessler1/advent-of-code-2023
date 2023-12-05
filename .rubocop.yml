@@ -13,6 +13,9 @@ Metrics/CyclomaticComplexity:
 Metrics/MethodLength:
   Enabled: false
 
+Metrics/PerceivedComplexity:
+  Enabled: false
+
 Naming/MethodParameterName:
   AllowedNames:
     - at
@@ -20,10 +23,10 @@ Naming/MethodParameterName:
     - x
     - y
 
-RSpec/FilePath:
+RSpec/DescribeClass:
   Enabled: false
 
-Rubocop/DescribeClass:
+RSpec/FilePath:
   Enabled: false
 
 Style/Alias:
