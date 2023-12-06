@@ -35,6 +35,9 @@ Style/Alias:
 Style/Documentation:
   Enabled: false
 
+Style/MultilineBlockChain:
+  Enabled: false
+
 Style/NegatedIf:
   Enabled: false
 
