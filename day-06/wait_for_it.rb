@@ -13,12 +13,15 @@ class WaitForIt
 
   def ways_to_win
     @races.map do |(time, distance)|
-      first_win = time.times.find do |i|
-        i * (time - i) > distance
-      end
+      # Solve quadratic for the first intersection:
+      #   x(t - x) = d
+      #   -x^2 + tx - d = 0
+      neg_b = -1 * time
+      sqrt = Math.sqrt((time**2) - (4 * (distance + 1)))  # + 1 because we need to beat it
+      ac = -2
 
-      # I'm thinking of it as a parabola, so it will be symmetric
-      # hence the `2 *` for finding ways to lose.
+      first_win = ((neg_b + sqrt) / ac).ceil
+
       total_ways = time + 1
       ways_to_lose = 2 * first_win
 
