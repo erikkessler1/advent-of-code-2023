@@ -17,11 +17,7 @@ Metrics/PerceivedComplexity:
   Enabled: false
 
 Naming/MethodParameterName:
-  AllowedNames:
-    - at
-    - id
-    - x
-    - y
+  Enabled: false
 
 RSpec/DescribeClass:
   Enabled: false
