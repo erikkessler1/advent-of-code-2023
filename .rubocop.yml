@@ -25,6 +25,9 @@ RSpec/DescribeClass:
 RSpec/FilePath:
   Enabled: false
 
+RSpec/MultipleExpectations:
+  Enabled: false
+
 Style/Alias:
   EnforcedStyle: prefer_alias_method
 
