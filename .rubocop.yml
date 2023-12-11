@@ -22,6 +22,9 @@ Metrics/PerceivedComplexity:
 Naming/MethodParameterName:
   Enabled: false
 
+RSpec/ExampleLength:
+  Enabled: false
+
 RSpec/DescribeClass:
   Enabled: false
 
