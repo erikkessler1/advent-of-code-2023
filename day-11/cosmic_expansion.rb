@@ -129,8 +129,8 @@ class CosmicExpansion
       x1, x2 = [galaxy_a.x, galaxy_b.x].sort
       y1, y2 = [galaxy_a.y, galaxy_b.y].sort
 
-      extra_x = universe.empty_columns.intersection(x1..x2).size
-      extra_y = universe.empty_rows.intersection(y1..y2).size
+      extra_x = universe.empty_columns.count { |x| x < x2 && x > x1 }
+      extra_y = universe.empty_rows.count { |y| y < y2 && y > y1 }
 
       dx = ((x2 - x1) + (extra_x * universe.expansion_factor))
       dy = ((y2 - y1) + (extra_y * universe.expansion_factor))

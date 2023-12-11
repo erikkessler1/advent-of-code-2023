@@ -33,7 +33,7 @@ describe CosmicExpansion, day: 11 do
     end
   end
 
-  it "finds the shortest paths", slow: true do
+  it "finds the shortest paths" do
     cosmic_expansion.expand!
     expect(cosmic_expansion.galaxy_pairs.map(&:shortest_path).sum).to eq(9_957_702)
 
