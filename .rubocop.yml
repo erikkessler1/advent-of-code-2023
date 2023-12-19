@@ -34,6 +34,9 @@ RSpec/FilePath:
 RSpec/MultipleExpectations:
   Enabled: false
 
+Security/Eval:
+  Enabled: false
+
 Style/Alias:
   EnforcedStyle: prefer_alias_method
 
@@ -50,4 +53,7 @@ Style/StringLiterals:
   EnforcedStyle: double_quotes
 
 Style/SymbolArray:
+  EnforcedStyle: brackets
+
+Style/WordArray:
   EnforcedStyle: brackets
