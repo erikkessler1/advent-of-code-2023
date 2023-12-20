@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "../lib/newline_input"
+require_relative "../lib/extensions"
 
 class HauntedWasteland
   include NewlineInput
@@ -22,7 +23,7 @@ class HauntedWasteland
       steps
     end
 
-    least_common_multiple(steps_set)
+    steps_set.least_common_multiple
   end
 
   private
@@ -45,38 +46,5 @@ class HauntedWasteland
       source, *destinations = line.match(/(...) = \((...), (...)\)/).captures
       [source, destinations]
     end
-  end
-
-  def least_common_multiple(steps_set)
-    steps_set.map do |steps|
-      prime_factors(steps).tally
-    end.reduce do |factor_tally, other_factor_tally|
-      factor_tally.merge(other_factor_tally) do |_, *conflict|
-        conflict.max
-      end
-    end.keys.reduce(&:*)
-  end
-
-  def prime_factors(n)
-    factors = []
-
-    while n.even?
-      factors << 2
-      n /= 2
-    end
-
-    i = 3
-    max = Math.sqrt(n)
-    until i > max
-      while (n % i).zero?
-        factors << i
-        n /= i
-      end
-      i += 2
-    end
-
-    factors << n if n > 2
-
-    factors
   end
 end
