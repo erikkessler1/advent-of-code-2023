@@ -9,10 +9,11 @@ class Point
     @y = y
   end
 
-  def adjacent_points(min_x: 0, min_y: 0, max_x: nil, max_y: nil)
+  def adjacent_points(min_x: 0, min_y: 0, max_x: nil, max_y: nil, include_diagonal: true)
     deltas = (-1..1).to_a
     deltas.product(deltas).map do |(dx, dy)|
       next if dx.zero? && dy.zero?
+      next unless include_diagonal || (dx.zero? || dy.zero?)
 
       new_x = dx + x
       next if min_x && new_x < min_x
